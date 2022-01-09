@@ -8,11 +8,6 @@ sections:
         field:
           type: text
           required: true
-          localizable: true
-          instructions_position: above
-          listable: hidden
-          input_type: text
-          antlers: false
       -
         handle: name
         field:
