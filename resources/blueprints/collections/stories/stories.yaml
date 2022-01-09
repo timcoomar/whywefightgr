@@ -8,19 +8,25 @@ sections:
         field:
           type: text
           required: true
+          localizable: true
+          validate:
+            - required
+          display: Name
+          instructions_position: above
+          listable: hidden
+          input_type: text
+          antlers: false
       -
-        handle: name
+        handle: subtitle
         field:
           input_type: text
           antlers: false
-          display: Name
+          display: Subtitle
           type: text
           icon: text
           localizable: true
           listable: hidden
           instructions_position: above
-          validate:
-            - required
       -
         handle: story
         field:
