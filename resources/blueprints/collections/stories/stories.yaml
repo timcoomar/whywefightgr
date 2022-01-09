@@ -88,6 +88,15 @@ sections:
           type: slug
           localizable: true
       -
+        handle: sites
+        field:
+          mode: default
+          display: Sites
+          type: sites
+          icon: sites
+          listable: hidden
+          instructions_position: above
+      -
         handle: parent
         field:
           type: entries
