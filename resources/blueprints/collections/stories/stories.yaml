@@ -1,0 +1,105 @@
+title: Stories
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          localizable: true
+          validate:
+            - required
+      -
+        handle: name
+        field:
+          input_type: text
+          antlers: false
+          display: Name
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+          instructions_position: above
+      -
+        handle: story
+        field:
+          type: markdown
+          display: Story
+          localizable: true
+          instructions_position: above
+          listable: hidden
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+      -
+        handle: age
+        field:
+          input_type: number
+          antlers: false
+          display: Age
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+      -
+        handle: collective_group
+        field:
+          input_type: text
+          antlers: false
+          display: 'Collective / Group'
+          type: text
+          icon: text
+          localizable: true
+          listable: hidden
+          instructions_position: above
+      -
+        handle: abstract
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+          display: Abstract
+          type: markdown
+          icon: markdown
+          localizable: true
+          listable: hidden
+          instructions_position: above
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - stories
+          max_items: 1
+          listable: false
+          localizable: true
+      -
+        handle: author
+        field:
+          type: users
+          display: Author
+          default: current
+          localizable: true
+          max_items: 1
+      -
+        handle: template
+        field:
+          type: template
+          display: Template
+          localizable: true
