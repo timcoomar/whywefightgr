@@ -94,6 +94,7 @@ sections:
           display: Sites
           type: sites
           icon: sites
+          localizable: true
           listable: hidden
           instructions_position: above
       -
