@@ -107,9 +107,9 @@ sections:
       -
         handle: template
         field:
-          default: story
+          hide_partials: true
           display: Template
-          type: hidden
-          icon: hidden
+          type: template
+          icon: template
           listable: hidden
           instructions_position: above
