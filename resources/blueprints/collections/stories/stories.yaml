@@ -107,6 +107,9 @@ sections:
       -
         handle: template
         field:
-          type: template
+          default: story
           display: Template
-          localizable: true
+          type: hidden
+          icon: hidden
+          listable: hidden
+          instructions_position: above
