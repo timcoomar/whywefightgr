@@ -127,3 +127,12 @@ sections:
           icon: template
           listable: hidden
           instructions_position: above
+      -
+        handle: sites
+        field:
+          mode: default
+          display: Sites
+          type: sites
+          icon: sites
+          listable: hidden
+          instructions_position: above
