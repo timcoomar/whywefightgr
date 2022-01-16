@@ -43,5 +43,6 @@ story: |-
 author: bda87674-cd7f-4e3d-8598-650708e299ee
 template: story
 updated_by: bda87674-cd7f-4e3d-8598-650708e299ee
-updated_at: 1642370019
+updated_at: 1642373849
+image: stamatina.jpg
 ---
