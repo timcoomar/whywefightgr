@@ -30,6 +30,8 @@ sections:
           icon: assets
           listable: hidden
           instructions_position: above
+          validate:
+            - required
       -
         handle: story
         field:
