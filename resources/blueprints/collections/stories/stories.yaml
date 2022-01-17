@@ -132,12 +132,10 @@ sections:
       -
         handle: quote
         field:
-          character_limit: '90'
+          character_limit: '250'
           antlers: false
           display: Quote
           type: textarea
           icon: textarea
           listable: hidden
           instructions_position: above
-          validate:
-            - required
