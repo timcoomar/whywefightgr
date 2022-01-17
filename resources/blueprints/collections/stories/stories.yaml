@@ -129,3 +129,15 @@ sections:
           icon: template
           listable: hidden
           instructions_position: above
+      -
+        handle: quote
+        field:
+          character_limit: '90'
+          antlers: false
+          display: Quote
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          validate:
+            - required
