@@ -132,7 +132,7 @@ sections:
       -
         handle: quote
         field:
-          character_limit: '250'
+          character_limit: '280'
           antlers: false
           display: Quote
           type: textarea
