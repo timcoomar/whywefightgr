@@ -2,3 +2,4 @@ title: 'Main Nav'
 collections:
   - pages
   - stories
+max_depth: 1
