@@ -2,3 +2,11 @@ name: Tim
 super: true
 id: bda87674-cd7f-4e3d-8598-650708e299ee
 password_hash: $2y$10$EQhhOKWtsgGM2yyAqF5FKOJr72chqwWRnXq7JD2GFKJ7.5u25YYLS
+preferences:
+  collections:
+    stories:
+      columns:
+        - title
+        - slug
+        - site
+        - image
