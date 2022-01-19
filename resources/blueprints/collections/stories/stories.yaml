@@ -139,12 +139,3 @@ sections:
           listable: hidden
           instructions_position: above
           localizable: true
-      -
-        handle: language
-        field:
-          mode: select
-          display: Language
-          type: sites
-          icon: sites
-          listable: hidden
-          instructions_position: above
