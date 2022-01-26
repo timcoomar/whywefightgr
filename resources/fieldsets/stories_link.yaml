@@ -10,8 +10,6 @@ fields:
       icon: text
       listable: hidden
       instructions_position: above
-      validate:
-        - required
+      localizable: true
       if:
         title: 'contains_any Stories, Ιστορίες'
-      localizable: true
