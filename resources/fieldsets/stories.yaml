@@ -1,2 +1,16 @@
 title: Stories
-fields: {  }
+fields:
+  -
+    handle: submission_link_text
+    field:
+      input_type: text
+      antlers: false
+      display: 'Submission Link Text'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required
+      if:
+        title: 'contains_any Stories, Ιστορίες'
