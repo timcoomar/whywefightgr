@@ -158,3 +158,11 @@ sections:
           icon: taxonomy
           listable: hidden
           instructions_position: above
+      -
+        handle: trigger_warnings
+        field:
+          type: terms
+          taxonomies:
+            - trigger_warnings
+          display: 'Trigger Warnings'
+          mode: select
