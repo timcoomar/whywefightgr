@@ -14,7 +14,7 @@ fields:
         - required
       localizable: true
       if_any:
-        title: 'contains_any About, Σχετικά'
+        title: 'contains_any Your Story, Η ιστορία σου'
   -
     handle: your_story
     field:
@@ -29,7 +29,7 @@ fields:
       validate:
         - required
       if:
-        title: 'contains_any About, Σχετικά'
+        title: 'contains_any Your Story, Η ιστορία σου'
   -
     handle: sent_text
     field:
@@ -44,7 +44,7 @@ fields:
         - required
       localizable: true
       if:
-        title: 'contains_any About, Σχετικά'
+        title: 'contains_any Your Story, Η ιστορία σου'
   -
     handle: consent
     field:
@@ -59,4 +59,4 @@ fields:
       validate:
         - required
       if:
-        title: 'contains_any About, Σχετικά'
+        title: 'contains_any Your Story, Η ιστορία σου'
