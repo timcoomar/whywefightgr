@@ -146,3 +146,15 @@ sections:
           required: true
           validate:
             - required
+      -
+        handle: tw
+        field:
+          mode: default
+          create: true
+          taxonomies:
+            - trigger_warnings
+          display: TW
+          type: terms
+          icon: taxonomy
+          listable: hidden
+          instructions_position: above
