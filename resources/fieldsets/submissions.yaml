@@ -16,6 +16,7 @@ fields:
       instructions_position: above
       if:
         title: 'contains_any Your Story, Η ιστορία σου'
+      localizable: true
   -
     handle: display_name
     field:
