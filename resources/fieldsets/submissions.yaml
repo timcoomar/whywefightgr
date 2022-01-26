@@ -16,23 +16,6 @@ fields:
       if_any:
         title: 'contains_any About, Σχετικά'
   -
-    handle: your_story
-    field:
-      restrict: false
-      automatic_line_breaks: true
-      automatic_links: false
-      escape_markup: false
-      smartypants: false
-      antlers: false
-      display: 'Your Story'
-      type: markdown
-      icon: markdown
-      listable: hidden
-      instructions_position: above
-      validate:
-        - required
-      localizable: true
-  -
     handle: consent
     field:
       default: false
@@ -56,3 +39,15 @@ fields:
       validate:
         - required
       localizable: true
+  -
+    handle: your_story
+    field:
+      input_type: text
+      antlers: false
+      display: 'Your Story'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required
