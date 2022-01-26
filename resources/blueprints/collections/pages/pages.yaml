@@ -42,3 +42,8 @@ sections:
           icon: template
           listable: hidden
           instructions_position: above
+  submissions:
+    display: Submissions
+    fields:
+      -
+        import: submissions
