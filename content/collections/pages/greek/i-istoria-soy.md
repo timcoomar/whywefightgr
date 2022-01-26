@@ -2,9 +2,9 @@
 id: 92d1435e-d3a5-422e-93d5-7023ed1799b2
 blueprint: pages
 title: 'Η ιστορία σου'
-template: default
+template: submissions
 updated_by: bda87674-cd7f-4e3d-8598-650708e299ee
-updated_at: 1643232823
+updated_at: 1643232838
 display_name: 'Το όνομα που θέλεις να εμφανίζεται'
 your_story: 'Η ιστορία σου'
 sent_text: Υποβολή
