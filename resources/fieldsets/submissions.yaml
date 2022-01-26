@@ -16,16 +16,20 @@ fields:
       if_any:
         title: 'contains_any About, Σχετικά'
   -
-    handle: consent
+    handle: your_story
     field:
-      default: false
-      display: Consent
-      type: toggle
-      icon: toggle
+      input_type: text
+      antlers: false
+      display: 'Your Story'
+      type: text
+      icon: text
+      localizable: true
       listable: hidden
       instructions_position: above
       validate:
         - required
+      if:
+        title: 'contains_any About, Σχετικά'
   -
     handle: sent_text
     field:
@@ -39,15 +43,19 @@ fields:
       validate:
         - required
       localizable: true
+      if:
+        title: 'contains_any About, Σχετικά'
   -
-    handle: your_story
+    handle: consent
     field:
       input_type: text
       antlers: false
-      display: 'Your Story'
+      display: Consent
       type: text
       icon: text
       listable: hidden
       instructions_position: above
       validate:
         - required
+      if:
+        title: 'contains_any About, Σχετικά'
