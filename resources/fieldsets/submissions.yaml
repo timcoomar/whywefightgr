@@ -1,2 +1,53 @@
 title: Submissions
-fields: {  }
+fields:
+  -
+    handle: display_name
+    field:
+      input_type: text
+      antlers: false
+      display: 'Name to be displayed'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required
+  -
+    handle: your_story
+    field:
+      restrict: false
+      automatic_line_breaks: true
+      automatic_links: false
+      escape_markup: false
+      smartypants: false
+      antlers: false
+      display: 'Your Story'
+      type: markdown
+      icon: markdown
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required
+  -
+    handle: consent
+    field:
+      default: false
+      display: Consent
+      type: toggle
+      icon: toggle
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required
+  -
+    handle: sent_text
+    field:
+      input_type: text
+      antlers: false
+      display: 'Sent button text'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      validate:
+        - required
