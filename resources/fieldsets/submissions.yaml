@@ -16,8 +16,6 @@ fields:
       instructions_position: above
       if:
         title: 'contains_any Your Story, Η ιστορία σου'
-      validate:
-        - required
   -
     handle: display_name
     field:
@@ -28,8 +26,6 @@ fields:
       icon: text
       listable: hidden
       instructions_position: above
-      validate:
-        - required
       localizable: true
       if_any:
         title: 'contains_any Your Story, Η ιστορία σου'
@@ -44,8 +40,6 @@ fields:
       localizable: true
       listable: hidden
       instructions_position: above
-      validate:
-        - required
       if:
         title: 'contains_any Your Story, Η ιστορία σου'
   -
@@ -59,8 +53,6 @@ fields:
       localizable: true
       listable: hidden
       instructions_position: above
-      validate:
-        - required
       if:
         title: 'contains_any Your Story, Η ιστορία σου'
   -
@@ -73,8 +65,6 @@ fields:
       icon: text
       listable: hidden
       instructions_position: above
-      validate:
-        - required
       localizable: true
       if:
         title: 'contains_any Your Story, Η ιστορία σου'
