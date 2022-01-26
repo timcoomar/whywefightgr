@@ -53,6 +53,7 @@ fields:
       display: Consent
       type: text
       icon: text
+      localizable: true
       listable: hidden
       instructions_position: above
       validate:
