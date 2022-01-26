@@ -47,3 +47,5 @@ sections:
     fields:
       -
         import: submissions
+      -
+        import: stories
