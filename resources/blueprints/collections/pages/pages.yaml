@@ -42,10 +42,10 @@ sections:
           icon: template
           listable: hidden
           instructions_position: above
-      -
-        import: stories_link
   submissions:
     display: Submissions
     fields:
       -
         import: submissions
+      -
+        import: stories_link
