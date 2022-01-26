@@ -12,6 +12,9 @@ fields:
       instructions_position: above
       validate:
         - required
+      localizable: true
+      if_any:
+        title: 'equals About'
   -
     handle: your_story
     field:
@@ -28,6 +31,7 @@ fields:
       instructions_position: above
       validate:
         - required
+      localizable: true
   -
     handle: consent
     field:
@@ -51,3 +55,4 @@ fields:
       instructions_position: above
       validate:
         - required
+      localizable: true
