@@ -146,8 +146,3 @@ sections:
           required: true
           validate:
             - required
-  submissions:
-    display: Submissions
-    fields:
-      -
-        import: submissions
