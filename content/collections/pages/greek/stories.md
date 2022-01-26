@@ -4,6 +4,7 @@ blueprint: pages
 title: Ιστορίες
 author: bda87674-cd7f-4e3d-8598-650708e299ee
 updated_by: bda87674-cd7f-4e3d-8598-650708e299ee
-updated_at: 1641762604
+updated_at: 1643237097
 template: stories
+submission_link_text: 'Η ιστορία σου'
 ---
