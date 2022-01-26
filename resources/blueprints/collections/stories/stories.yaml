@@ -158,3 +158,4 @@ sections:
           icon: taxonomy
           listable: hidden
           instructions_position: above
+          localizable: true
