@@ -14,7 +14,7 @@ fields:
         - required
       localizable: true
       if_any:
-        title: 'equals Σχετικά'
+        title: 'contains About'
   -
     handle: your_story
     field:
