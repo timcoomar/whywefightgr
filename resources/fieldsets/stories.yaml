@@ -14,3 +14,4 @@ fields:
         - required
       if:
         title: 'contains_any Stories, Ιστορίες'
+      localizable: true
