@@ -8,5 +8,5 @@ your_story: 'Your story'
 consent: 'I give my consent for my story to be published on this website whywefight.gr. I understand that I retain the right to have it removed at any point, simply by contacting the administrators of the site.'
 send_text: Send
 updated_by: bda87674-cd7f-4e3d-8598-650708e299ee
-updated_at: 1643238326
+updated_at: 1643238395
 ---
