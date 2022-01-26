@@ -139,3 +139,15 @@ sections:
           listable: hidden
           instructions_position: above
           localizable: true
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+  submissions:
+    display: Submissions
+    fields:
+      -
+        import: submissions
