@@ -1,0 +1,53 @@
+<header class="site-header">
+
+  <figure class="site-logo">
+      <a href="{{ homepage }}">
+          <img src="{{ config:app:url }}/assets/images/whywefight-logo.png">
+      </a>
+  </figure>
+
+  {{ partial:partials/menu-main }}
+
+</header>
+
+<main class="main-form">
+
+  <article class="submissions-intro">
+    <h2 class="submissions-intro__title">{{ your_story }}</h2>
+    {{ submissions_intro }}
+  </article>
+
+  <form class="submissions-form" name="submissions" action="/success" netlify-honeypot="bot-field" method="POST" data-netlify="true">
+    
+    <p class="krivomai"><label>Krivomai<input type="text" name="bot-field" /></label></p>
+    
+    <label class="submissions-form__name">
+      <p>{{ display_name }}:</p>
+      <input type="text" name="name" required />
+    </label>
+  
+    <label class="submissions-form__story">
+      <p>{{ your_story }}:</p>
+      <textarea name="message" required></textarea>
+    </label>
+  
+    <label class="submissions-form__consent">
+      <p>{{ consent }}</p>
+      <input type="checkbox" class="cm-toggle" required />
+    </label>
+  
+    <button class="submissions-form__submit" type="submit">{{ send_text }}</button>
+
+  </form>
+
+</main>
+
+<footer class="footer-page footer-page--stories">
+  <ul class="languageswitcher-main">
+    {{ locales current_first="false" }}
+        {{ if total_results > 1 }}
+            <a href="{{ url }}">{{ if is_current }}<strong>{{ /if }}{{ locale:handle }}{{ if is_current }}</strong>{{ /if }}</a>{{ unless last}} | {{ /unless }}
+        {{ /if }}
+    {{ /locales }}
+  </ul>
+</footer>

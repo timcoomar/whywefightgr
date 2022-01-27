@@ -1,0 +1,59 @@
+<header class="site-header">
+
+    <figure class="site-logo">
+        <a href="{{ homepage }}">
+            <img src="{{ config:app:url }}/assets/images/whywefight-logo.png">
+        </a>
+    </figure>
+
+    {{ partial:partials/menu-main }}
+
+</header>
+<main class="main-stories">
+{{ collection:stories paginate="12" as="posts" }}
+
+    {{ posts }}
+
+        <article class="stories-preview" style="background-image:url('{{ image }}')">
+
+            <a href="{{ permalink }}">{{ title }}</a>
+            
+            {{ if tw }}
+                <div class="tws">
+                    TW: {{ tw }}<span>{{ title }}</span>{{ /tw }}
+                </div>
+            {{ /if }}
+
+            <div class="reading-time">⏱ {{ story | read_time:180 }}'</div>
+
+        </article>
+
+    {{ /posts }}
+
+    <article class="stories-preview stories-preview--yours">
+        <a href="submissions">{{ submission_link_text }}</a>
+    </article>
+
+    <nav class="stories-pagination">
+        {{ paginate }}
+            <a href="{{ prev_page }}">❮</a>
+            <span>{{ current_page }} / {{ total_pages }}</span>
+            <a href="{{ next_page }}">❯</a>
+        {{ /paginate }}
+    </nav>
+
+{{ /collection:stories }}
+</main>
+
+<footer class="footer-page footer-page--stories">
+    <ul class="languageswitcher-main">
+        {{ locales current_first="false" }}
+            {{ if total_results > 1 }}
+                <a href="{{ url }}">{{ if is_current }}<strong>{{ /if }}{{ locale:handle }}{{ if is_current }}</strong>{{ /if }}</a>{{ unless last}} | {{ /unless }}
+            {{ /if }}
+        {{ /locales }}
+    </ul>
+</footer>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="{{ config:app:url }}/js/accents-min.js"></script>

@@ -1,0 +1,48 @@
+<header class="site-header">
+
+  <figure class="site-logo">
+      <a href="{{ homepage }}">
+          <img src="{{ config:app:url }}/assets/images/whywefight-logo.png">
+      </a>
+  </figure>
+
+  {{ partial:partials/menu-main }}
+
+</header>
+
+<main class="main-story">
+
+  <article class="article-story">
+
+    <h2 class="story-title">{{ title }}</h2>
+
+    <figure class="story-image">
+      <img src="{{ image }}">
+      <p class="reading-time">⏱ {{ story | read_time:180 }}'</p>
+      {{ if tw }}
+          <div class="tws">
+              TW: {{ tw }}<span>{{ title }}</span>{{ /tw }}
+          </div>
+      {{ /if }}
+    </figure>
+
+    {{ story }}
+
+    <footer class="story-footer">
+
+      <div class="story-share">
+        <h5 class="story-share__title">Share:</h5>
+        <!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-via="whywefightgr" data-hashtags="genderedviolence" data-lang="el" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-via="whywefightgr" data-hashtags="genderedviolence" data-lang="el" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="fb-share-button" data-href="{{ permalink }}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwhywefight.gr%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+      </div>
+
+      {{ collection:next limit="1" sort="date:asc" }}
+      <a href="{{ url }}">{{ title }} ❯</a>
+      {{ /collection:next }}
+
+    </footer>
+
+  </article>
+
+</main>

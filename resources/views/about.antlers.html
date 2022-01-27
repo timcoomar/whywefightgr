@@ -1,3 +1,25 @@
-{{ partial:partials/menu-main }}
+<header class="site-header">
 
+  <figure class="site-logo">
+      <a href="{{ homepage }}">
+          <img src="{{ config:app:url }}/assets/images/whywefight-logo.png">
+      </a>
+  </figure>
+
+  {{ partial:partials/menu-main }}
+
+</header>
+
+<main class="main-page">
 {{ content }}
+</main>
+
+<footer class="footer-page">
+  <ul class="languageswitcher-main">
+    {{ locales current_first="false" }}
+        {{ if total_results > 1 }}
+            <a href="{{ url }}">{{ if is_current }}<strong>{{ /if }}{{ locale:handle }}{{ if is_current }}</strong>{{ /if }}</a>{{ unless last}} | {{ /unless }}
+        {{ /if }}
+    {{ /locales }}
+  </ul>
+</footer>

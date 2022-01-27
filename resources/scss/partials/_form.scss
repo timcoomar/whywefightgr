@@ -1,0 +1,141 @@
+.submissions-intro {
+  padding-bottom: 1rem;
+  p {
+    text-align: center;
+  }
+}
+
+.submissions-intro__title {
+  text-align: center;
+  font-size: 1.9rem;
+}
+
+.submissions-form {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  border-radius: 0.6rem;
+  max-width: 80ch;
+  margin: auto;
+}
+
+.submissions-form__name > input {
+  display: block;
+  width: 100%;
+  border-bottom: 1px dashed var(--wwf-purple);
+}
+
+.submissions-form__story > textarea {
+  display: block;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  min-height: 16vw;
+  max-width: 100%;
+  padding: 1.2rem;
+}
+
+.submissions-form__consent {
+  font-size: 0.8rem;
+}
+
+.submissions-form__submit {
+  align-self: flex-end;
+  //background: var(--wwf-violet);
+  padding: 0.5rem 1.2rem;
+  position: relative;
+  --border-width: 9px;
+  &:hover {
+    background: var(--wwf-red);
+    color: white;
+  }
+}
+
+.submissions-form__submit::before {
+  content: "";
+  width: 30%;
+  aspect-ratio: 1/1;
+  display: block;
+  position: absolute;
+  top: calc(var(--border-width) * -1);
+  left: calc(var(--border-width) * -1);
+  border-left: var(--border-width) solid var(--wwf-purple);
+  border-top: var(--border-width) solid var(--wwf-purple);
+  border-bottom: 0;
+  border-right: 0;
+  transition: transform 0.4s;
+}
+
+.submissions-form__submit::after {
+  content: "";
+  width: 30%;
+  aspect-ratio: 1/1;
+  display: block;
+  position: absolute;
+  bottom: calc(var(--border-width) * -1);
+  right: calc(var(--border-width) * -1);
+  border-bottom: var(--border-width) solid var(--wwf-violet);
+  border-right: var(--border-width) solid var(--wwf-violet);
+  border-top: 0;
+  border-left: 0;
+  transition: transform 0.4s;
+}
+
+/* Toggle Button */
+.cm-toggle {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/* To create surface of toggle button */
+.cm-toggle:after {
+  content: "";
+  width: 60px;
+  height: 28px;
+  display: inline-block;
+  background: rgba(196, 195, 195, 0.55);
+  border-radius: 18px;
+  clear: both;
+}
+
+/* Contents before checkbox to create toggle handle */
+.cm-toggle:before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -3px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Shift the handle to left on check event */
+.cm-toggle:checked:before {
+  left: 32px;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+/* Background color when toggle button will be active */
+.cm-toggle:checked:after {
+  background: var(--wwf-violet);
+}
+
+/* Transition for smoothness */
+.cm-toggle,
+.cm-toggle:before,
+.cm-toggle:after,
+.cm-toggle:checked:before,
+.cm-toggle:checked:after {
+  transition: ease 0.3s;
+  -webkit-transition: ease 0.3s;
+  -moz-transition: ease 0.3s;
+  -o-transition: ease 0.3s;
+}

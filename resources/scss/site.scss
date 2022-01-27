@@ -1,3 +1,16 @@
-@import 'partials/base';
+:root {
+  --wwf-red: rgba(255, 87, 88, 1);
+  --wwf-violet: rgba(204, 108, 229, 1);
+  --wwf-purple: rgba(102, 56, 240, 1);
+}
 
-@import 'partials/holding';
+@import "partials/reset";
+@import "partials/base";
+
+@import "partials/common";
+@import "partials/flipster";
+@import "partials/home";
+@import "partials/stories";
+@import "partials/story";
+@import "partials/page";
+@import "partials/form";

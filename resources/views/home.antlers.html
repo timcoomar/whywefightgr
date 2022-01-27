@@ -1,13 +1,55 @@
-<main class="holding temp">
+<header class="site-header">
+
     <figure class="site-logo">
-        <img src="{{ config:app:url }}/assets/images/whywefight-logo.png">
+        <a href="{{ homepage }}">
+            <img src="{{ config:app:url }}/assets/images/whywefight-logo.png">
+        </a>
     </figure>
-    <p>{{ content }}</p>
-    <ul class="languageswitcher-main">
-        {{ locales current_first="false" }}
-            {{ if total_results > 1 }}
-                <a href="{{ url }}">{{ if is_current }}<strong>{{ /if }}{{ locale:handle }}{{ if is_current }}</strong>{{ /if }}</a>{{ unless last}} | {{ /unless }}
-            {{ /if }}
-        {{ /locales }}  
-    </ul>
+
+    {{ partial:partials/menu-main }}
+
+</header>
+
+<main class="main-home">
+    <div id="flat">
+        <ul>
+            {{ collection:stories limit="20" }}
+            <li data-flip-title="{{ title }}">
+                <a href="{{ permalink }}">
+                    <h4>{{ title }}</h4>
+                    <img src="{{ image }}">
+                    {{ if quote}}
+                        <blockquote class="home-quote">{{ quote }}</blockquote>
+                    {{ /if }}
+                    {{ if tw }}
+                        <div class="tws">
+                            TW: {{ tw }}<span>{{ title }}</span>{{ /tw }}
+                        </div>
+                    {{ /if }}
+                </a>
+            </li>
+            {{ /collection:stories }}
+        </ul>
+    </div>
 </main>
+
+<ul class="languageswitcher-main">
+    {{ locales current_first="false" }}
+        {{ if total_results > 1 }}
+            <a href="{{ url }}">{{ if is_current }}<strong>{{ /if }}{{ locale:handle }}{{ if is_current }}</strong>{{ /if }}</a>{{ unless last}} | {{ /unless }}
+        {{ /if }}
+    {{ /locales }}
+</ul>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="{{ config:app:url }}/js/jquery.flipster-min.js"></script>
+<script>
+var flat = $("#flat").flipster({
+    style: 'coverflow',
+    spacing: -0.45,
+    start: 0,
+    scrollwheel: false,
+    loop: true,
+    keyboard: true
+});
+</script>

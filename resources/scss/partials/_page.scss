@@ -1,0 +1,28 @@
+.main-page,
+.main-form {
+  max-width: 80vw;
+  margin: auto;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.main-stories {
+  padding-bottom: 1rem;
+}
+
+.footer-page {
+  display: flex;
+  justify-content: right;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  .languageswitcher-main {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.footer-page--stories {
+  justify-content: center;
+  padding: 0;
+}

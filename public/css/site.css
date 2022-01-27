@@ -1,6 +1,500 @@
+@charset "UTF-8";
+:root {
+  --wwf-red: rgba(255, 87, 88, 1);
+  --wwf-violet: rgba(204, 108, 229, 1);
+  --wwf-purple: rgba(102, 56, 240, 1);
+}
+
+/* Box sizing rules */
+html {
+  box-sizing: border-box;
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-tap-highlight-color: transparent;
+  /* 3*/
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: Roboto, Arial, sans-serif;
   margin: 0;
+  min-height: 100vh;
+  /* safari mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+main {
+  display: block;
+}
+
+body,
+p,
+table,
+blockquote,
+address,
+pre,
+iframe,
+form,
+figure,
+dl,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: bolder;
+  margin: 0;
+}
+
+/* Lists (enumeration)
+   ========================================================================== */
+ul[class],
+ol[class] {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Lists (definition)
+   ========================================================================== */
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+  border: 0;
+  border-top: 1px solid;
+  margin: 0;
+  clear: both;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: inherit;
+  /* 2 */
+}
+
+address {
+  font-style: inherit;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: inherit;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+  display: block;
+  border: 0;
+  vertical-align: bottom;
+  border-style: none;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Useful table styles */
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* Forms
+   ========================================================================== */
+button,
+input,
+optgroup,
+select,
+textarea {
+  vertical-align: middle;
+  color: inherit;
+  font: inherit;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+}
+
+/**
+ * Remove all Style fro select elements. Does not quite work cross-browser
+ */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border-radius: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+button[disabled],
+[type=button][disabled],
+[type=reset][disabled],
+[type=submit][disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Reset to invisible
+ */
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/**
+ * Fix placeholder font properties inheritance.
+ */
+::-webkit-input-placeholder {
+  font: inherit;
+}
+
+:-ms-input-placeholder {
+  font: inherit;
+}
+
+::-moz-placeholder {
+  font: inherit;
+}
+
+::placeholder {
+  font: inherit;
+}
+
+/**
+ * Clickable labels
+ */
+label[for] {
+  cursor: pointer;
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Table
+   ========================================================================== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption {
+  text-align: left;
+}
+
+td,
+th {
+  vertical-align: top;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  font-size: 1rem;
+}
+
+body {
+  font-family: "Noto Sans Display", Proxima Nova, Arial, sans-serif;
+  margin: 0;
+  line-height: 1.5;
+  font-size: clamp(17px, 4.3vw, 22px);
 }
 
 a {
@@ -11,8 +505,13 @@ a:hover {
   color: black;
 }
 
+main p {
+  margin-bottom: 1rem;
+}
+
 img {
   max-width: 100%;
+  display: block;
 }
 
 ul {
@@ -24,20 +523,1130 @@ figure {
   padding: 0;
 }
 
-.holding {
-  max-width: 100%;
-  height: 100vh;
+.krivomai {
+  display: none;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: minmax(80px, 15vw) 1fr;
+  padding: 1.4rem;
+  max-width: 100vw;
+  overflow-x: scroll;
+}
+
+.site-logo {
+  max-width: clamp(80px, 12vw, 250px);
+}
+
+.menu-main {
+  list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
-}
-.holding img {
-  max-width: 70vw;
-  max-height: 70vh;
-}
-.holding p {
+  padding: 1.5rem;
+  font-size: clamp(1.1rem, 1.7vw, 1.7rem);
   margin: 0;
-  letter-spacing: 1px;
+}
+.menu-main li a {
+  display: block;
+  padding: 1rem 2.5rem;
+  border-bottom: 2px solid black;
+  position: relative;
+  color: black;
+}
+.menu-main li a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+.menu-main li a.current::after {
+  background: var(--wwf-red);
+}
+.menu-main li a::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  background: black;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: calc(100% - 4px);
+  right: 0;
+}
+.menu-main li:hover a::after {
+  background: var(--wwf-violet);
+}
+
+@media (min-width: 600px) {
+  main > article > p {
+    text-align: justify;
+  }
+}
+@media (max-width: 800px) {
+  .site-header {
+    padding: 1.2rem;
+  }
+
+  .menu-main li a {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+}
+.languageswitcher-main {
+  text-align: center;
+  padding-bottom: 2rem;
+  display: block;
+  font-size: 1.1rem;
+}
+
+/*! jQuery.Flipster, v1.1.5 (built 2020-10-17) */
+.flipster {
+  display: block;
+  overflow-x: hidden;
+  overflow-y: visible;
+  position: relative;
+}
+
+.flipster:focus {
+  outline: none;
+}
+
+.flipster__container,
+.flipster__item {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+
+.flipster__container {
+  display: block;
+  white-space: nowrap;
+  word-spacing: -0.25em;
+  -webkit-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flipster__item {
+  display: inline-block;
+  white-space: normal;
+  word-spacing: normal;
+  vertical-align: bottom;
+}
+
+.flipster--click .flipster__item--past,
+.flipster--click .flipster__item--future {
+  cursor: pointer;
+}
+
+.flipster__item img {
+  max-width: 100%;
+}
+
+.flipster__button {
+  position: absolute;
+  top: 50%;
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 999;
+  cursor: pointer;
+  font-size: 15px;
+  opacity: 0.5;
+  transition: opacity 500ms ease;
+  margin: -1em 2em;
+}
+
+.flipster__button svg {
+  width: 2em;
+  stroke: currentColor;
+  fill: transparent;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.flipster__button:hover,
+.flipster__button:focus {
+  opacity: 1;
+}
+
+.flipster__button--prev {
+  left: 0;
+}
+
+.flipster__button--next {
+  right: 0;
+}
+
+.flipster__nav,
+.flipster__nav__item {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flipster__nav {
+  display: block;
+  margin: 0 0 4em;
+  text-align: center;
+  position: relative;
+}
+
+.flipster__nav__item {
+  display: inline-block;
+  margin: 0 0.25em;
+}
+
+.flipster__nav__link {
+  display: block;
+  color: inherit;
+  padding: 0.5em 1em;
+  position: relative;
+  overflow: hidden;
+  transition: all 250ms ease-out;
+  transition-timing-function: cubic-bezier(0.56, 0.12, 0.12, 0.98);
+}
+
+.flipster__nav__link::after {
+  content: "";
+  display: block;
+  background: #232221;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-transform: translateY(100%) translateY(-0.25em);
+  transform: translateY(100%) translateY(-0.25em);
+  transition: inherit;
+}
+
+.flipster__nav__item--current > .flipster__nav__link,
+.flipster__nav__link:hover,
+.flipster__nav__link:focus {
+  color: #fff;
+}
+
+.flipster__nav__item--current > .flipster__nav__link::after,
+.flipster__nav__link:hover::after,
+.flipster__nav__link:focus::after {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.flipster__nav__child {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: -1px;
+  padding: 0.5em;
+  background: #4e4441;
+  z-index: 1;
+}
+
+.flipster__nav__child .flipster__nav__link {
+  color: #fff;
+}
+
+.flipster__nav__child .flipster__nav__link::after {
+  background: #fff;
+}
+
+.flipster__nav__child .flipster__nav__item--current > .flipster__nav__link,
+.flipster__nav__child .flipster__nav__link:hover,
+.flipster__nav__child .flipster__nav__link:focus {
+  color: #232221;
+}
+
+.flipster__nav__item--current .flipster__nav__child {
+  display: block;
+}
+
+.flipster--carousel .flipster__container,
+.flipster--carousel .flipster__item,
+.flipster--carousel .flipster__item__content {
+  transition: all 350ms ease-in-out;
+  transition-timing-function: cubic-bezier(0.56, 0.12, 0.12, 0.98);
+}
+
+.flipster--carousel .flipster__item {
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+
+.flipster--carousel .flipster__item--past,
+.flipster--carousel .flipster__item--future {
+  opacity: 0;
+  transition-delay: 115ms;
+}
+
+.flipster--carousel .flipster__item--past-2,
+.flipster--carousel .flipster__item--future-2 {
+  opacity: 0.6;
+  transition-delay: 90ms;
+}
+
+.flipster--carousel .flipster__item--past-1,
+.flipster--carousel .flipster__item--future-1 {
+  opacity: 0.8;
+  transition-delay: 60ms;
+}
+
+.flipster--carousel .flipster__item--past .flipster__item__content {
+  -webkit-transform: translateX(100%) rotateY(-20deg) scale(0.5);
+  transform: translateX(100%) rotateY(-20deg) scale(0.5);
+}
+
+.flipster--carousel .flipster__item--past-2 .flipster__item__content {
+  -webkit-transform: translateX(25%) rotateY(40deg) scale(0.65);
+  transform: translateX(25%) rotateY(40deg) scale(0.65);
+}
+
+.flipster--carousel .flipster__item--past-1 .flipster__item__content {
+  -webkit-transform: rotateY(45deg) scale(0.8);
+  transform: rotateY(45deg) scale(0.8);
+}
+
+.flipster--carousel .flipster__item--future .flipster__item__content {
+  -webkit-transform: translateX(-100%) rotateY(20deg) scale(0.5);
+  transform: translateX(-100%) rotateY(20deg) scale(0.5);
+}
+
+.flipster--carousel .flipster__item--future-2 .flipster__item__content {
+  -webkit-transform: translateX(-25%) rotateY(-40deg) scale(0.65);
+  transform: translateX(-25%) rotateY(-40deg) scale(0.65);
+}
+
+.flipster--carousel .flipster__item--future-1 .flipster__item__content {
+  -webkit-transform: rotateY(-45deg) scale(0.8);
+  transform: rotateY(-45deg) scale(0.8);
+}
+
+.flipster--carousel.no-rotate .flipster__item--past .flipster__item__content {
+  -webkit-transform: translateX(175%) scale(0.5);
+  transform: translateX(175%) scale(0.5);
+}
+
+.flipster--carousel.no-rotate .flipster__item--past-2 .flipster__item__content {
+  -webkit-transform: translateX(25%) scale(0.65);
+  transform: translateX(25%) scale(0.65);
+}
+
+.flipster--carousel.no-rotate .flipster__item--past-1 .flipster__item__content {
+  -webkit-transform: translateX(0%) scale(0.8);
+  transform: translateX(0%) scale(0.8);
+}
+
+.flipster--carousel.no-rotate .flipster__item--future .flipster__item__content {
+  -webkit-transform: translateX(-175%) scale(0.5);
+  transform: translateX(-175%) scale(0.5);
+}
+
+.flipster--carousel.no-rotate .flipster__item--future-2 .flipster__item__content {
+  -webkit-transform: translateX(-25%) scale(0.65);
+  transform: translateX(-25%) scale(0.65);
+}
+
+.flipster--carousel.no-rotate .flipster__item--future-1 .flipster__item__content {
+  -webkit-transform: translateX(0%) scale(0.8);
+  transform: translateX(0%) scale(0.8);
+}
+
+.flipster--carousel .flipster__item--current .flipster__item__content {
+  -webkit-transform: translateX(0) rotateY(0deg) scale(1);
+  transform: translateX(0) rotateY(0deg) scale(1);
+  transition-delay: 60ms;
+}
+
+.flipster--coverflow .flipster__container,
+.flipster--coverflow .flipster__item,
+.flipster--coverflow .flipster__item__content {
+  transition: all 350ms ease-in-out;
+  transition-timing-function: cubic-bezier(0.56, 0.12, 0.12, 0.98);
+}
+
+.flipster--coverflow .flipster__item {
+  -webkit-perspective: 800px;
+  perspective: 800px;
+}
+
+.flipster--coverflow .flipster__container {
+  padding-bottom: 5%;
+}
+
+.flipster--coverflow .flipster__item__content {
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  box-reflect: below 0 -webkit-gradient(linear, left bottom, left top, color-stop(0.05, rgba(255, 255, 255, 0.12)), color-stop(0.2, transparent));
+  -webkit-box-reflect: below 0 -webkit-gradient(linear, left bottom, left top, color-stop(0.05, rgba(255, 255, 255, 0.12)), color-stop(0.2, transparent));
+}
+
+.flipster--coverflow .flipster__item__content img:only-child {
+  display: block;
+}
+
+.flipster--coverflow .flipster__item--past .flipster__item__content {
+  -webkit-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  -webkit-transform: scale(0.75) rotateY(55deg);
+  transform: scale(0.75) rotateY(55deg);
+}
+
+.flipster--coverflow .flipster__item--future .flipster__item__content {
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: scale(0.75) rotateY(-55deg);
+  transform: scale(0.75) rotateY(-55deg);
+}
+
+.flipster--coverflow .flip-current .flipster__item__content {
+  -webkit-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.flipster--flat .flipster__container,
+.flipster--flat .flipster__item,
+.flipster--flat .flipster__item__content {
+  transition: all 400ms ease-in-out;
+}
+
+.flipster--flat .flipster__item--past,
+.flipster--flat .flipster__item--future {
+  opacity: 0.5;
+}
+
+.flipster--flat .flipster__item--past .flipster__item__content {
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+}
+
+.flipster--flat .flipster__item--future .flipster__item__content {
+  -webkit-transform: scale(0.75);
+  transform: scale(0.75);
+}
+
+.flipster--wheel {
+  overflow: hidden;
+}
+
+.flipster--wheel .flipster__container,
+.flipster--wheel .flipster__item__content {
+  transition: all 400ms ease-in-out;
+  transition-timing-function: cubic-bezier(0.56, 0.12, 0.12, 0.98);
+}
+
+.flipster--wheel .flipster__container {
+  padding-bottom: 20%;
+}
+
+.flipster--wheel .flipster__item__content {
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+}
+
+.flipster--wheel .flipster__item--past .flipster__item__content {
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
+.flipster--wheel .flipster__item--future .flipster__item__content {
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+
+.flipster--wheel .flipster__item__content img:only-child {
+  display: block;
+}
+
+.flipster--wheel .flipster__item--past .flipster__item__content {
+  opacity: 0;
+  -webkit-transform: rotateZ(-80deg) translate(-170%, 110%);
+  transform: rotateZ(-80deg) translate(-170%, 110%);
+}
+
+.flipster--wheel .flipster__item--future .flipster__item__content {
+  opacity: 0;
+  -webkit-transform: rotateZ(80deg) translate(170%, 110%);
+  transform: rotateZ(80deg) translate(170%, 110%);
+}
+
+.flipster--wheel .flipster__item--past-3 .flipster__item__content {
+  opacity: 1;
+  -webkit-transform: rotateZ(-60deg) translate(-70%, 75%);
+  transform: rotateZ(-60deg) translate(-70%, 75%);
+}
+
+.flipster--wheel .flipster__item--future-3 .flipster__item__content {
+  opacity: 1;
+  -webkit-transform: rotateZ(60deg) translate(70%, 75%);
+  transform: rotateZ(60deg) translate(70%, 75%);
+}
+
+.flipster--wheel .flipster__item--past-2 .flipster__item__content {
+  opacity: 1;
+  -webkit-transform: rotateZ(-40deg) translate(-17%, 30%);
+  transform: rotateZ(-40deg) translate(-17%, 30%);
+}
+
+.flipster--wheel .flipster__item--future-2 .flipster__item__content {
+  opacity: 1;
+  -webkit-transform: rotateZ(40deg) translate(17%, 30%);
+  transform: rotateZ(40deg) translate(17%, 30%);
+}
+
+.flipster--wheel .flipster__item--past-1 .flipster__item__content {
+  opacity: 1;
+  -webkit-transform: rotateZ(-20deg);
+  transform: rotateZ(-20deg);
+}
+
+.flipster--wheel .flipster__item--future-1 .flipster__item__content {
+  opacity: 1;
+  -webkit-transform: rotateZ(20deg);
+  transform: rotateZ(20deg);
+}
+
+.flipster--wheel .flip-current .flipster__item__content {
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+.main-home {
+  padding: 3rem 0.5rem 1.5rem;
+  overflow-x: hidden;
+}
+
+[data-flip-title] {
+  position: relative;
+  max-width: 55vw;
+  --border-width: 15px;
+}
+[data-flip-title] a {
+  display: block;
+  max-width: 55vw;
+  aspect-ratio: 16/8;
+  overflow: hidden;
+}
+[data-flip-title] a img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+[data-flip-title] h4 {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  color: white;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding: 1rem 1.2rem;
+  background: rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
+
+.flipster {
+  overflow: visible;
+}
+
+[data-flip-title]:hover {
+  opacity: 0.9;
+  transition: 1s;
+}
+[data-flip-title]:hover::before {
+  -webkit-transform: translateX(-10px) translateY(-10px);
+          transform: translateX(-10px) translateY(-10px);
+  transition: 1s;
+}
+[data-flip-title]:hover::after {
+  -webkit-transform: translateX(10px) translateY(10px);
+          transform: translateX(10px) translateY(10px);
+  transition: 1s;
+}
+
+[data-flip-title]::before {
+  position: absolute;
+  display: block;
+  z-index: -2;
+  content: "";
+  width: 20vw;
+  height: 20vw;
+  top: calc(var(--border-width) * -1 - 1px);
+  left: calc(var(--border-width) * -1 - 1px);
+  transition: all 0.3s;
+  border-top-width: var(--border-width);
+  border-left-width: var(--border-width);
+  border-bottom-width: 0;
+  border-right-width: 0;
+  border-style: solid;
+}
+
+[data-flip-title]::after {
+  position: absolute;
+  display: block;
+  z-index: -2;
+  content: "";
+  width: 20vw;
+  height: 20vw;
+  bottom: calc(var(--border-width) * -1 - 1px);
+  right: calc(var(--border-width) * -1 - 1px);
+  transition: all 0.3s;
+  border-top-width: 0;
+  border-left-width: 0;
+  border-bottom-width: var(--border-width);
+  border-right-width: var(--border-width);
+  border-style: solid;
+}
+
+[data-flip-title]:nth-of-type(3n + 1)::before {
+  border-color: var(--wwf-purple);
+}
+[data-flip-title]:nth-of-type(3n + 2)::before {
+  border-color: var(--wwf-red);
+}
+[data-flip-title]:nth-of-type(3n + 3)::before {
+  border-color: var(--wwf-violet);
+}
+[data-flip-title]:nth-of-type(3n + 1)::after {
+  border-color: var(--wwf-violet);
+}
+[data-flip-title]:nth-of-type(3n + 2)::after {
+  border-color: var(--wwf-purple);
+}
+[data-flip-title]:nth-of-type(3n + 3)::after {
+  border-color: var(--wwf-red);
+}
+
+[data-flip-title]:not(.flipster__item--current)::before,
+[data-flip-title]:not(.flipster__item--current)::after {
+  opacity: 0;
+}
+
+.home-quote {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 40%;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+  font-family: Jura, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.home-quote::before {
+  content: "“";
+}
+.home-quote::after {
+  content: "”";
+}
+
+@media (max-width: 1400px) {
+  .home-quote {
+    width: 50%;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 1100px) {
+  .home-quote {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}
+@media (max-width: 800px) {
+  .home-quote {
+    display: none;
+  }
+
+  [data-flip-title] {
+    --border-width: 7px;
+    max-width: 70vw;
+  }
+  [data-flip-title] h4 {
+    font-size: 1rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+.flipster__item__content .tws {
+  position: absolute;
+  text-transform: lowercase;
+  text-align: right;
+  font-size: 0.8rem;
+  right: 2rem;
+  bottom: 1.5rem;
+  display: flex;
+  gap: 0.3rem;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.flipster__item__content:hover .tws {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .flipster__item__content .tws {
+    display: none;
+  }
+}
+.main-stories {
+  max-width: 92vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.stories-preview {
+  --border-width: 9px;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  border: calc(var(--border-width) * 2) solid white;
+  position: relative;
+  background-size: cover;
+  transition: all 0.4s;
+}
+.stories-preview a {
+  color: white;
+  font-size: 1.3rem;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  display: grid;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.4s;
+}
+.stories-preview a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.stories-preview:hover::before {
+  -webkit-transform: translateX(-9px) translateY(-9px);
+          transform: translateX(-9px) translateY(-9px);
+}
+.stories-preview:hover::after {
+  -webkit-transform: translateX(9px) translateY(9px);
+          transform: translateX(9px) translateY(9px);
+}
+
+.stories-preview::before {
+  content: "";
+  width: 30%;
+  aspect-ratio: 1/1;
+  display: block;
+  position: absolute;
+  top: calc(var(--border-width) * -1);
+  left: calc(var(--border-width) * -1);
+  border-left: var(--border-width) solid var(--wwf-purple);
+  border-top: var(--border-width) solid var(--wwf-purple);
+  border-bottom: 0;
+  border-right: 0;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.stories-preview::after {
+  content: "";
+  width: 30%;
+  aspect-ratio: 1/1;
+  display: block;
+  position: absolute;
+  bottom: calc(var(--border-width) * -1);
+  right: calc(var(--border-width) * -1);
+  border-bottom: var(--border-width) solid var(--wwf-violet);
+  border-right: var(--border-width) solid var(--wwf-violet);
+  border-top: 0;
+  border-left: 0;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.stories-preview:nth-of-type(3n + 1)::before {
+  border-color: var(--wwf-purple);
+}
+.stories-preview:nth-of-type(3n + 2)::before {
+  border-color: var(--wwf-red);
+}
+.stories-preview:nth-of-type(3n + 3)::before {
+  border-color: var(--wwf-violet);
+}
+.stories-preview:nth-of-type(3n + 1)::after {
+  border-color: var(--wwf-violet);
+}
+.stories-preview:nth-of-type(3n + 2)::after {
+  border-color: var(--wwf-purple);
+}
+.stories-preview:nth-of-type(3n + 3)::after {
+  border-color: var(--wwf-red);
+}
+
+.stories-preview--yours {
+  grid-column: -2/-1;
+}
+.stories-preview--yours a {
+  background: rgba(0, 0, 0, 0.05);
+  color: black;
+}
+.stories-preview--yours::after {
+  border-color: rgba(0, 0, 0, 0.5) !important;
+}
+.stories-preview--yours::before {
+  border-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.stories-preview > .reading-time {
+  position: absolute;
+  font-size: 0.8rem;
+  left: 0.6rem;
+  bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.stories-preview:hover > .reading-time,
+.stories-preview:hover > .tws {
+  opacity: 1;
+}
+
+.main-stories:hover > .stories-preview:not(:hover) {
+  opacity: 0.7;
+}
+
+.stories-preview > .tws {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.6rem;
+  display: flex;
+  gap: 0.2rem;
+  margin: 0;
+  color: white;
+  text-transform: lowercase;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.stories-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1/-1;
+}
+.stories-pagination span {
+  font-size: 0.9rem;
+}
+
+.main-story {
+  max-width: 80vw;
+  margin: auto;
+  padding: 1rem 1rem 2rem;
+}
+
+.article-story {
+  position: relative;
+}
+.article-story > p:first-of-type::first-letter {
+  font-size: 2rem;
+}
+.article-story > figure {
+  position: relative;
+}
+.article-story > figure:first-of-type::after {
+  content: "";
+  aspect-ratio: 1/1;
+  width: 20vw;
+  border-right: 1px solid var(--wwf-red);
+  border-bottom: 1px solid var(--wwf-red);
+  display: block;
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+}
+
+.article-story::before {
+  content: "";
+  aspect-ratio: 1/1;
+  width: 20vw;
+  border-top: 1px solid var(--wwf-red);
+  border-left: 1px solid var(--wwf-red);
+  display: block;
+  position: absolute;
+  top: 3.1rem;
+  left: -2rem;
+}
+
+.story-title {
+  text-align: right;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 0.7rem;
+}
+
+.story-image {
+  float: right;
+  max-width: 50%;
+  margin-left: 2.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.article-story .reading-time {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  font-size: 0.9rem;
+}
+
+.article-story .tws {
+  position: absolute;
+  left: 2.5rem;
+  bottom: -1.5rem;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  display: flex;
+  gap: 0.2rem;
+}
+
+@media (max-width: 1000px) {
+  .main-story {
+    max-width: 90vw;
+  }
+
+  .story-image {
+    max-width: 100%;
+    margin: 0 0 2.5rem;
+  }
+
+  .article-story::before {
+    top: 1.6rem;
+    left: -2rem;
+  }
+}
+@media (max-width: 650px) {
+  .article-story::before {
+    display: none;
+  }
+
+  .article-story figure:first-of-type::after {
+    display: none;
+  }
+}
+.story-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--wwf-red);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.story-share {
+  display: flex;
+  align-items: center;
+}
+.story-share > * {
+  margin-right: 0.5rem;
+}
+
+.story-share__title {
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+
+.fb-share-button {
+  display: flex !important;
+}
+
+.main-page,
+.main-form {
+  max-width: 80vw;
+  margin: auto;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.main-stories {
+  padding-bottom: 1rem;
+}
+
+.footer-page {
+  display: flex;
+  justify-content: right;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.footer-page .languageswitcher-main {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 2.5rem;
+}
+
+.footer-page--stories {
+  justify-content: center;
+  padding: 0;
+}
+
+.submissions-intro {
+  padding-bottom: 1rem;
+}
+.submissions-intro p {
+  text-align: center;
+}
+
+.submissions-intro__title {
+  text-align: center;
+  font-size: 1.9rem;
+}
+
+.submissions-form {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  border-radius: 0.6rem;
+  max-width: 80ch;
+  margin: auto;
+}
+
+.submissions-form__name > input {
+  display: block;
+  width: 100%;
+  border-bottom: 1px dashed var(--wwf-purple);
+}
+
+.submissions-form__story > textarea {
+  display: block;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  min-height: 16vw;
+  max-width: 100%;
+  padding: 1.2rem;
+}
+
+.submissions-form__consent {
+  font-size: 0.8rem;
+}
+
+.submissions-form__submit {
+  align-self: flex-end;
+  padding: 0.5rem 1.2rem;
+  position: relative;
+  --border-width: 9px;
+}
+.submissions-form__submit:hover {
+  background: var(--wwf-red);
+  color: white;
+}
+
+.submissions-form__submit::before {
+  content: "";
+  width: 30%;
+  aspect-ratio: 1/1;
+  display: block;
+  position: absolute;
+  top: calc(var(--border-width) * -1);
+  left: calc(var(--border-width) * -1);
+  border-left: var(--border-width) solid var(--wwf-purple);
+  border-top: var(--border-width) solid var(--wwf-purple);
+  border-bottom: 0;
+  border-right: 0;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+.submissions-form__submit::after {
+  content: "";
+  width: 30%;
+  aspect-ratio: 1/1;
+  display: block;
+  position: absolute;
+  bottom: calc(var(--border-width) * -1);
+  right: calc(var(--border-width) * -1);
+  border-bottom: var(--border-width) solid var(--wwf-violet);
+  border-right: var(--border-width) solid var(--wwf-violet);
+  border-top: 0;
+  border-left: 0;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+}
+
+/* Toggle Button */
+.cm-toggle {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/* To create surface of toggle button */
+.cm-toggle:after {
+  content: "";
+  width: 60px;
+  height: 28px;
+  display: inline-block;
+  background: rgba(196, 195, 195, 0.55);
+  border-radius: 18px;
+  clear: both;
+}
+
+/* Contents before checkbox to create toggle handle */
+.cm-toggle:before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -3px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Shift the handle to left on check event */
+.cm-toggle:checked:before {
+  left: 32px;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Background color when toggle button will be active */
+.cm-toggle:checked:after {
+  background: var(--wwf-violet);
+}
+
+/* Transition for smoothness */
+.cm-toggle,
+.cm-toggle:before,
+.cm-toggle:after,
+.cm-toggle:checked:before,
+.cm-toggle:checked:after {
+  transition: ease 0.3s;
+  -webkit-transition: ease 0.3s;
+  -moz-transition: ease 0.3s;
+  -o-transition: ease 0.3s;
 }

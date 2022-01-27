@@ -1,0 +1,129 @@
+// SINGLE STORY PAGE
+
+.main-story {
+  max-width: 80vw;
+  margin: auto;
+  padding: 1rem 1rem 2rem;
+}
+
+.article-story {
+  position: relative;
+
+  > p:first-of-type {
+    &::first-letter {
+      font-size: 2rem;
+    }
+  }
+
+  > figure {
+    position: relative;
+  }
+
+  > figure:first-of-type {
+    &::after {
+      content: "";
+      aspect-ratio: 1/1;
+      width: 20vw;
+      border-right: 1px solid var(--wwf-red);
+      border-bottom: 1px solid var(--wwf-red);
+      display: block;
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+    }
+  }
+}
+
+.article-story::before {
+  content: "";
+  aspect-ratio: 1/1;
+  width: 20vw;
+  border-top: 1px solid var(--wwf-red);
+  border-left: 1px solid var(--wwf-red);
+  display: block;
+  position: absolute;
+  top: 3.1rem;
+  left: -2rem;
+}
+
+.story-title {
+  text-align: right;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 0.7rem;
+}
+
+.story-image {
+  float: right;
+  max-width: 50%;
+  margin-left: 2.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.article-story .reading-time {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 0;
+  font-size: 0.9rem;
+}
+
+.article-story .tws {
+  position: absolute;
+  left: 2.5rem;
+  bottom: -1.5rem;
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  display: flex;
+  gap: 0.2rem;
+}
+
+@media (max-width: 1000px) {
+  .main-story {
+    max-width: 90vw;
+  }
+  .story-image {
+    max-width: 100%;
+    margin: 0 0 2.5rem;
+  }
+  .article-story::before {
+    top: 1.6rem;
+    left: -2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .article-story::before {
+    display: none;
+  }
+  .article-story figure:first-of-type::after {
+    display: none;
+  }
+}
+
+.story-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--wwf-red);
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.story-share {
+  display: flex;
+  align-items: center;
+  > * {
+    margin-right: 0.5rem;
+  }
+}
+
+.story-share__title {
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+
+.fb-share-button {
+  display: flex !important;
+}
