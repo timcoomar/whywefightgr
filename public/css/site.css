@@ -1547,6 +1547,14 @@ figure {
   font-size: 0.8rem;
 }
 
+.submissions-form__pin > p {
+  font-size: 0.8rem;
+}
+
+.submissions-form__pin > input {
+  border-bottom: 1px dashed var(--wwf-violet);
+}
+
 .submissions-form__submit {
   align-self: flex-end;
   padding: 0.5rem 1.2rem;
