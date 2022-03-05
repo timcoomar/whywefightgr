@@ -1198,6 +1198,44 @@ figure {
     display: none;
   }
 }
+@media (max-width: 750px) {
+  .main-home {
+    padding-top: 1rem;
+  }
+  .main-home .carousel-mobile {
+    display: block;
+  }
+  .main-home .carousel {
+    display: none !important;
+  }
+}
+@media (min-width: 751px) {
+  .main-home .carousel-mobile {
+    display: none;
+  }
+  .main-home .carousel {
+    display: block !important;
+  }
+}
+.carousel-mobile > ul {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100vw;
+}
+
+.carousel-mobile > ul > * {
+  flex: 0 0 auto;
+  max-width: 90vw;
+  margin-right: 1vw;
+  list-style: none;
+}
+.carousel-mobile > ul > * > * {
+  width: 95vw;
+  max-width: 90vw;
+}
+
 .main-stories {
   max-width: 92vw;
   margin: auto;

@@ -11,7 +11,28 @@
 </header>
 
 <main class="main-home">
-    <div id="flat">
+    <div id="flat" class="carousel">
+        <ul>
+            {{ collection:stories limit="20" }}
+            <li data-flip-title="{{ title }}">
+                <a href="{{ permalink }}">
+                    <h4>{{ title }}</h4>
+                    <img src="{{ image }}">
+                    {{ if quote}}
+                        <blockquote class="home-quote">{{ quote }}</blockquote>
+                    {{ /if }}
+                    {{ if tw }}
+                        <div class="tws">
+                            TW: {{ tw }}<span>{{ title }}</span>{{ /tw }}
+                        </div>
+                    {{ /if }}
+                </a>
+            </li>
+            {{ /collection:stories }}
+        </ul>
+    </div>
+
+    <div class="carousel-mobile">
         <ul>
             {{ collection:stories limit="20" }}
             <li data-flip-title="{{ title }}">
