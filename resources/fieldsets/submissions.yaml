@@ -79,3 +79,4 @@ fields:
       icon: text
       listable: hidden
       instructions_position: above
+      localizable: true
