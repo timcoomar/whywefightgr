@@ -69,3 +69,13 @@ fields:
       localizable: true
       if:
         title: 'contains_any Your Story, Η ιστορία σου'
+  -
+    handle: pin_description
+    field:
+      input_type: text
+      antlers: false
+      display: 'Pin Description'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
