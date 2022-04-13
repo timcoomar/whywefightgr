@@ -10,7 +10,7 @@
 
 </header>
 <main class="main-stories">
-{{ collection:stories paginate="12" as="posts" }}
+{{ collection:stories as="posts" }}
 
     {{ posts }}
 
@@ -34,13 +34,13 @@
         <a href="{{ link to='submissions' }}">{{ submission_link_text }}</a>
     </article>
 
-    <nav class="stories-pagination">
+    <!--<nav class="stories-pagination">
         {{ paginate }}
             <a href="{{ prev_page }}">❮</a>
             <span>{{ current_page }} / {{ total_pages }}</span>
             <a href="{{ next_page }}">❯</a>
         {{ /paginate }}
-    </nav>
+    </nav>-->
 
 {{ /collection:stories }}
 </main>
